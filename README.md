@@ -122,9 +122,3 @@ mongodb+srv://tobivelazquez80:dbMarketpw@dbmarket.1ngbz.mongodb.net/dbmarket
 - Moyano Berrondo, Tahiel Lisandro.
 
 ---
-
-### Notas adicionales:
-- **MongoDB Atlas**: El servicio de MongoDB Atlas aloja la base de datos en la nube. Asegúrate de que las credenciales de conexión sean correctas y que tu IP esté permitida en la configuración de seguridad de Atlas.
-- Si tienes problemas con la conexión a MongoDB Atlas, verifica que tu base de datos en el cluster de Atlas esté configurada correctamente y que las reglas de red estén configuradas para permitir conexiones desde tu máquina local.
-
----
