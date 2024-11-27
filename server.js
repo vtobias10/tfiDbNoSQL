@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/dbMarket')
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://tobivelazquez80:dbMarketpw@dbmarket.1ngbz.mongodb.net/')
     .then(() => console.log('Conectado a MongoDB en localhost'))
     .catch((err) => console.error('Error al conectar a MongoDB:', err));
 
