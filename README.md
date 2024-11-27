@@ -50,6 +50,7 @@ Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes c
 
 2. Instala las dependencias necesarias:
    ```bash
+   npm init -y
    npm install express mongoose dotenv
    ```
 
