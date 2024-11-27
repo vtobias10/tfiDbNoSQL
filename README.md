@@ -44,8 +44,8 @@ Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes c
 
 1. Clona este repositorio:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd <NOMBRE_DEL_PROYECTO>
+   git clone https://github.com/vtobias10/tfiDbNoSQL.git
+   cd tfiDbNoSQL
    ```
 
 2. Instala las dependencias necesarias:
