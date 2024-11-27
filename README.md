@@ -1,14 +1,14 @@
 
 # TFI MongoDB NoSQL
 
-Este proyecto es una aplicación backend para la gestión de productos, diseñada como parte de la materia **Base de Datos**. Utiliza **MongoDB** como base de datos y está desarrollado con **Node.js** y **Express**.
+Este proyecto es una aplicación backend para la gestión de productos, diseñada como parte de la materia **Base de Datos**. Utiliza **MongoDB Atlas** como base de datos en la nube y está desarrollado con **Node.js** y **Express**.
 
 ---
 
 ## **Características del Proyecto**
 
 - Operaciones CRUD (Crear, Leer, Actualizar, Eliminar) para la colección `productos`.
-- Conexión a una base de datos MongoDB local (`dbMarket`).
+- Conexión a una base de datos MongoDB en la nube utilizando **MongoDB Atlas**.
 
 ---
 
@@ -17,11 +17,7 @@ Este proyecto es una aplicación backend para la gestión de productos, diseñad
 Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes componentes:
 
 1. **Node.js** (versión 16 o superior) [Descargar Node.js](https://nodejs.org/)
-
-   
-2. **MongoDB** (Base de datos local) [Instalar MongoDB](https://www.mongodb.com/trydownloadcommunity)
-
-3. **Thunder Client** o cualquier cliente REST para probar los endpoints.
+2. **Thunder Client** o cualquier cliente REST para probar los endpoints.
 
 ---
 
@@ -60,33 +56,33 @@ Antes de ejecutar este proyecto, asegúrate de tener instalados los siguientes c
 
 ### Archivo .env
 
-Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
+Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido, con tu cadena de conexión a MongoDB Atlas:
 
 ```plaintext
-MONGO_URI=mongodb://localhost:27017/dbMarket
+MONGO_URI=mongodb+srv://tobivelazquez80:dbMarketpw@dbmarket.1ngbz.mongodb.net/dbmarket
 PORT=5000
 ```
+
 ### Conexión a la Base de Datos
 
-Este proyecto utiliza una base de datos MongoDB local. Asegúrate de que el servicio de MongoDB esté corriendo. Por defecto, se conecta a:
+Este proyecto utiliza una base de datos MongoDB en la nube, alojada en **MongoDB Atlas**. Asegúrate de que la base de datos esté accesible y que las credenciales en el archivo `.env` sean correctas.
+
+La cadena de conexión por defecto es:
+
 ```plaintext
-mongodb://localhost:27017/dbMarket
+mongodb+srv://tobivelazquez80:dbMarketpw@dbmarket.1ngbz.mongodb.net/dbmarket
 ```
+
 ---
 
 ## **Ejecución del Proyecto**
 
-1. Inicia el servidor de MongoDB:
-   ```bash
-   mongod
-   ```
-
-2. Corre la aplicación:
+1. Corre la aplicación:
    ```bash
    node server.js
    ```
 
-3. El servidor estará disponible en:
+2. El servidor estará disponible en:
    ```plaintext
    http://localhost:5000
    ```
@@ -99,11 +95,11 @@ mongodb://localhost:27017/dbMarket
 
 | Método | Ruta                  | Descripción                           |
 |--------|-----------------------|---------------------------------------|
-| POST   | `/api/productos`      | Crear un nuevo producto               |
-| GET    | `/api/productos`      | Obtener todos los productos           |
-| GET    | `/api/productos/:id`  | Obtener un producto por su ID         |
-| PUT    | `/api/productos/:id`  | Actualizar un producto existente      |
-| DELETE | `/api/productos/:id`  | Eliminar un producto                  |
+| POST   | `/api/productos`       | Crear un nuevo producto               |
+| GET    | `/api/productos`       | Obtener todos los productos           |
+| GET    | `/api/productos/:id`   | Obtener un producto por su ID         |
+| PUT    | `/api/productos/:id`   | Actualizar un producto existente      |
+| DELETE | `/api/productos/:id`   | Eliminar un producto                  |
 
 ### **Ejemplo de Cuerpo para POST**
 ```json
@@ -118,40 +114,17 @@ mongodb://localhost:27017/dbMarket
 
 ---
 
-## **Importar la Colección `productos` en MongoDB Compass**
-
-Sigue estos pasos para importar la colección `productos` al proyecto:
-
-1. **Abrir MongoDB Compass**:
-   - Inicia la aplicación MongoDB Compass.
-   - Conéctate al servidor local usando la siguiente URI:
-     ```plaintext
-     mongodb://localhost:27017
-     ```
-
-2. **Seleccionar la base de datos**:
-   - Busca o crea la base de datos `dbMarket`.
-   - Selecciona la base de datos y haz clic en `Add Collection` para asegurarte de que exista la colección `productos`.
-
-3. **Importar el archivo JSON**:
-   - Haz clic en la colección `productos`.
-   - Selecciona el botón `Import Data` ubicado en la parte superior derecha.
-   - En la ventana emergente:
-     - Selecciona el archivo JSON proporcionado: `dbMarket.productos.json`.
-     - Asegúrate de que el formato sea `JSON`.
-     - Haz clic en `Import`.
-
-4. **Verificar los datos importados**:
-   - Una vez completada la importación, podrás ver los documentos en la colección `productos`.
-
-### Archivo Proporcionado
-[Colección(Google Drive Link)] (https://drive.google.com/file/d/17eemWl9eStKZpz-6gzOwhgMwzsxiQXhz/view?usp=sharing)
-
----
-
 ## **Integrantes**
 
 - Velazquez, Tobias Alejo.
 - Juarez, Lautaro Andres Enrique.
 - Lazarte, Lucas.
 - Moyano Berrondo, Tahiel Lisandro.
+
+---
+
+### Notas adicionales:
+- **MongoDB Atlas**: El servicio de MongoDB Atlas aloja la base de datos en la nube. Asegúrate de que las credenciales de conexión sean correctas y que tu IP esté permitida en la configuración de seguridad de Atlas.
+- Si tienes problemas con la conexión a MongoDB Atlas, verifica que tu base de datos en el cluster de Atlas esté configurada correctamente y que las reglas de red estén configuradas para permitir conexiones desde tu máquina local.
+
+---
